@@ -1,10 +1,18 @@
 import React from "react";
 import Button from "./Button";
+import { useNavigate } from "react-router-dom";
 
 const Header = () => {
-  const handleClick = (e) => {
-    console.log("CLICK", e);
-  };
+  const navigate = useNavigate();
+
+  // const handleClick = (link) => {
+  //   console.log("Click", link);
+  //   // navigate(`/${link}`);
+  // };
+
+  const handleAbout = () => navigate("/");
+  const handleSkills = () => navigate("/skills");
+  const handlePortfolio = () => navigate("/portfolio");
 
   return (
     <header>
@@ -12,13 +20,17 @@ const Header = () => {
         <h1>JB</h1>
       </div>
       <div className="tab-container">
-        <Button onClick={handleClick} text={"About"} className={"tab"} />
+        <Button onClick={handleAbout} text={"About"} className={"tab"} />
         <Button
-          onClick={handleClick}
+          onClick={handleSkills}
           text={"What Can I Do?"}
           className={"tab"}
         />
-        <Button onClick={handleClick} text={"Portfolio"} className={"tab"} />
+        <Button
+          onClick={handlePortfolio}
+          text={"Portfolio"}
+          className={"tab"}
+        />
       </div>
     </header>
   );
