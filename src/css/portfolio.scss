@@ -1,0 +1,35 @@
+/*
+**************************
+            SASS
+**************************
+*/
+@import "variables";
+/*
+************END***********
+*/
+
+.portfolio-container {
+  padding-bottom: 200px;
+}
+
+.all-items-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  //   background-image: url(src/assets/SimpleShiny.svg);
+}
+
+.item-container {
+  width: 320px;
+  border: 2px white solid;
+  border-radius: 5px;
+  padding: 25px;
+  margin: 25px;
+  background-color: $black;
+
+  img {
+    width: 100%;
+    border-radius: 5px;
+  }
+}

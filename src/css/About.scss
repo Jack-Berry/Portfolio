@@ -1,17 +1,29 @@
+/*
+**************************
+            SASS
+**************************
+*/
+@import "variables";
+/*
+************END***********
+*/
+
 .about-container {
   width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
+  // background-image: url(src/assets/SimpleShiny.svg);
 }
 
 .intro-container {
-  padding-top: 150px;
-  width: 60%;
-  border-bottom: 2px white solid;
+  width: 80%;
+  border-bottom: 3px $tangerine solid;
   display: flex;
   flex-direction: column;
   align-items: center;
+  background-color: $black;
+  // background-image: url(src/assets/SimpleShiny.svg);
 }
 
 .anim-container {
@@ -20,7 +32,7 @@
   flex-direction: row;
   justify-content: flex-start;
   padding-left: 60%;
-  padding-bottom: 180px;
+  padding-bottom: 200px;
 
   h2 {
     margin-left: 10px;
@@ -29,7 +41,23 @@
 
 .about-body-container {
   width: 100%;
-  padding-top: 200px;
+  padding-top: 250px;
   padding-bottom: 100px;
   text-align: left;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+  .about-text-container {
+    width: 50%;
+    background-color: $black;
+  }
+
+  .about-img-container {
+    width: 50%;
+    text-align: center;
+    img {
+      width: 100%;
+    }
+  }
 }

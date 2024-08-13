@@ -16,6 +16,11 @@
   padding: 2rem;
   text-align: center;
   top: 0;
+  // background-color: $linen;
+}
+
+.main {
+  padding-top: 150px;
 }
 header {
   background-color: $black;
@@ -24,10 +29,13 @@ header {
   flex-direction: row;
   justify-content: flex-end;
   height: 100px;
-  padding: 0;
-  margin: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
   top: 0;
   width: 100%;
+  margin-bottom: 150px;
+  padding: 15px;
 
   .logo-text-container {
     margin-right: auto;
@@ -37,29 +45,25 @@ header {
     align-items: center;
 
     h1 {
-      border: 4px $mint-green solid;
+      border: 4px $lemon-chiffon solid;
       border-radius: 5px;
       padding: 5px;
     }
   }
   .tab-container {
-    margin-right: 10%;
+    width: 400px;
     display: flex;
     flex-direction: row;
-    justify-content: space-evenly;
     align-items: center;
     gap: 15px;
   }
 }
 
 footer {
+  background-color: $black;
   position: fixed;
   left: 0;
   bottom: 0;
   right: 0;
   width: 100%;
-}
-
-about {
-  height: 50%;
 }

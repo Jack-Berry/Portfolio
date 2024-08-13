@@ -13,15 +13,20 @@
   line-height: 1.5;
   font-weight: 400;
 
-  color-scheme: light dark;
+  // color-scheme: light dark;
   color: $white;
   background-color: $black;
+  background-image: url(src/assets/Wave.svg);
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
+}
+
+body {
+  color: $celadon;
 }
 
 h1 {
@@ -35,9 +40,11 @@ button {
   padding: 0.6em 1.2em;
   font-size: 1em;
   font-weight: 500;
+  height: 40px;
   font-family: inherit;
-  background-color: $white;
-  color: $black;
+  background-color: $lemon-chiffon;
+  border-color: $tangerine;
+  color: $tangerine;
   cursor: pointer;
   transition: border-color 0.25s;
 }

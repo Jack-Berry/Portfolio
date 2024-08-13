@@ -51,7 +51,7 @@ const About = () => {
   console.log(arrCounter, toolArr.length);
   return (
     <>
-      <div className="about-container">
+      <div className="main about-container">
         <div className="intro-container">
           <h1>Hi! I'm Jack</h1>
           <h2>I am a JavaScript Full-Stack Developer</h2>
@@ -61,25 +61,34 @@ const About = () => {
           </div>
         </div>
         <div className="about-body-container">
-          <h2>About</h2>
-          <p>
-            My name is Jack Berry and I am a nerd, tech lover and software
-            engineer. I enjoy solving complex problems, whether it's frontend or
-            backend, hardware or software.
-          </p>
-          <p>
-            I am a graduate of The Jump Digital School, completing their 3 month
-            Full-Stack Software Engineer bootcamp. During this I completed
-            multiple projects, including a larger scale full-stack project. I
-            also have previous experience of programming in Swift.
-          </p>
-          <p>
-            At this point I know what I have written is shit, so I am just going
-            to treat this as a placeholder and come back to it when my brain is
-            braining. At least it is a similarly sized block of text, so I can
-            continue working on the project with a reasonable idea of what it'll
-            look like.
-          </p>
+          <div className="about-text-container">
+            <h2>About</h2>
+            <p>
+              My name is Jack Berry and I am a nerd, tech lover and software
+              engineer. I enjoy solving complex problems, whether it's frontend
+              or backend, hardware or software.
+            </p>
+            <p>
+              I am a graduate of The Jump Digital School, completing their 3
+              month Full-Stack Software Engineer bootcamp. During this I
+              completed multiple projects, including a larger scale full-stack
+              project. I also have previous experience of programming in Swift.
+            </p>
+            <p>
+              At this point I know what I have written is shit, so I am just
+              going to treat this as a placeholder and come back to it when my
+              brain is braining. At least it is a similarly sized block of text,
+              so I can continue working on the project with a reasonable idea of
+              what it'll look like.
+            </p>
+          </div>
+          <div className="about-img-container">
+            <h2>PICTURE OF ME</h2>
+            <img
+              src="src/assets/5bbc4580e3c14-c76c281102e784bab037b80077f849aa.png"
+              alt=""
+            />
+          </div>
         </div>
       </div>
     </>
