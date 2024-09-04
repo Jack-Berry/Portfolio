@@ -27,9 +27,19 @@
   padding: 25px;
   margin: 25px;
   background-color: $background;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 
   img {
     width: 100%;
     border-radius: 5px;
   }
+}
+
+.item-button-container {
+  width: 80%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
 }
