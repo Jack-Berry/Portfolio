@@ -22,11 +22,11 @@
 
 .item-container {
   width: 320px;
-  border: 2px white solid;
+  border: 2px $border solid;
   border-radius: 5px;
   padding: 25px;
   margin: 25px;
-  background-color: $black;
+  background-color: $background;
 
   img {
     width: 100%;

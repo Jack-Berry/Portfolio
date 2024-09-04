@@ -11,7 +11,7 @@ const Header = () => {
   // };
 
   const handleAbout = () => navigate("/");
-  const handleSkills = () => navigate("/skills");
+  const handleContact = () => navigate("/contact");
   const handlePortfolio = () => navigate("/portfolio");
 
   return (
@@ -22,15 +22,11 @@ const Header = () => {
       <div className="tab-container">
         <Button onClick={handleAbout} text={"About"} className={"tab"} />
         <Button
-          onClick={handleSkills}
-          text={"What Can I Do?"}
-          className={"tab"}
-        />
-        <Button
           onClick={handlePortfolio}
           text={"Portfolio"}
           className={"tab"}
         />
+        <Button onClick={handleContact} text={"Contact"} className={"tab"} />
       </div>
     </header>
   );

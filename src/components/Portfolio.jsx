@@ -16,8 +16,8 @@ const Portfolio = () => {
       img: "https://kgarayev.com/investmentapp.jpg",
       description:
         "A homage to the Hyundai website using only vanilla CSS and HTML.",
-      github: "git link",
-      live: "live link",
+      github: "https://github.com/Jack-Berry/JB-Homage",
+      live: "https://main--hyundai-homage.netlify.app/",
     },
     {
       title: "Holidough",
@@ -31,9 +31,9 @@ const Portfolio = () => {
       title: "Weather App",
       img: "https://kgarayev.com/theceng.jpg",
       description:
-        "A simple weather app using the Open Weather API and vanilla Javascript and CSS.",
-      github: "git link",
-      live: "live link",
+        "A simple weather app using the Open Weather API and vanilla Javascript and CSS. I have included some responsive styling depending on the weather and a simple programatic animation based on the chance of rain.",
+      github: "https://github.com/Jack-Berry/Weather",
+      live: "https://jbweather-app.netlify.app/",
     },
     {
       title: "The Simpsons Quotes",
@@ -54,6 +54,8 @@ const Portfolio = () => {
               title={item.title}
               img={item.img}
               description={item.description}
+              live={item.live}
+              github={item.github}
             />
           );
         })}

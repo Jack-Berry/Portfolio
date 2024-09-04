@@ -14,9 +14,10 @@
   font-weight: 400;
 
   // color-scheme: light dark;
-  color: $white;
-  background-color: $black;
-  background-image: url(src/assets/Wave.svg);
+  // color: $white;
+  background-color: $background;
+  // background-image: url(src/assets/Wave.svg);
+  // background-image: url(src/assets/SimpleShiny.svg);
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -26,12 +27,13 @@
 }
 
 body {
-  color: $celadon;
+  color: $main-text;
 }
 
 h1 {
   font-size: 3.2em;
   line-height: 1.1;
+  background-color: $background;
 }
 
 button {
@@ -42,9 +44,9 @@ button {
   font-weight: 500;
   height: 40px;
   font-family: inherit;
-  background-color: $lemon-chiffon;
-  border-color: $tangerine;
-  color: $tangerine;
+  background-color: $button;
+  border-color: $border;
+  color: $border;
   cursor: pointer;
   transition: border-color 0.25s;
 }
