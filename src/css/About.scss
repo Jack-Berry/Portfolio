@@ -17,6 +17,8 @@
 }
 
 .intro-container {
+  padding-top: 100px;
+  padding-bottom: 200px;
   width: 80%;
   border-bottom: 3px $border solid;
   display: flex;
@@ -31,11 +33,16 @@
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
-  padding-left: 60%;
-  padding-bottom: 200px;
 
   h2 {
     margin-left: 10px;
+    width: 50%;
+  }
+  .i-like {
+    text-align: right;
+  }
+  .text-anim {
+    text-align: left;
   }
 }
 

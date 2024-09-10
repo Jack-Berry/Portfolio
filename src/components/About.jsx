@@ -56,8 +56,8 @@ const About = () => {
           <h1>Hi! I'm Jack</h1>
           <h2>I am a JavaScript Full-Stack Developer</h2>
           <div className="anim-container">
-            <h2>I like using </h2>
-            <h2>{toolArr[arrCounter]}</h2>
+            <h2 className="i-like">I like using </h2>
+            <h2 className="text-anim">{toolArr[arrCounter]}</h2>
           </div>
         </div>
         <div className="about-body-container">
