@@ -39,11 +39,15 @@ header {
   padding: 15px;
 
   .logo-text-container {
-    margin-right: auto;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
+    // margin-right: auto;
+    // display: flex;
+    // flex-direction: row;
+    // justify-content: space-between;
+    // align-items: center;
+
+    position: absolute;
+    top: 0px;
+    left: 30px;
 
     h1 {
       border: 4px $border solid;
@@ -51,12 +55,38 @@ header {
       padding: 5px;
     }
   }
+  .burger-container {
+    position: absolute;
+    height: 60px;
+    width: 60px;
+    top: 30%;
+    right: 50px;
+  }
   .tab-container {
-    width: 400px;
+    position: absolute;
+    padding-top: 20px;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
+    justify-content: flex-start;
     align-items: center;
-    gap: 15px;
+    gap: 50px;
+
+    width: 100%;
+    top: 120px;
+    right: 0px;
+    background-color: $background;
+    button {
+      border: none;
+      font-size: 35px;
+      height: 100px;
+    }
+  }
+  .open {
+    height: 900px;
+  }
+  .closed {
+    height: 0;
+    opacity: 0;
   }
 }
 
@@ -67,4 +97,28 @@ footer {
   bottom: 0;
   right: 0;
   width: 100%;
+}
+
+@media (min-width: 860px) {
+  header {
+    .burger-container {
+      display: none;
+    }
+    .tab-container {
+      position: static;
+      margin-right: 20%;
+      display: flex;
+      width: 400px;
+      flex-direction: row;
+      align-items: center;
+      gap: 15px;
+      height: 100%;
+
+      button {
+        border: inherit;
+        font-size: 25px;
+        height: 60px;
+      }
+    }
+  }
 }
