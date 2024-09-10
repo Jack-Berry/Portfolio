@@ -57,10 +57,27 @@ header {
   }
   .burger-container {
     position: absolute;
-    height: 60px;
+    height: 40px;
     width: 60px;
-    top: 30%;
-    right: 50px;
+    top: 35%;
+    right: 100px;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+  }
+  .hamburger {
+    width: 100%;
+    height: 0;
+    // border-bottom: 2px solid white;
+  }
+  .burger1 {
+    border-top: 5px solid $col-c;
+  }
+  .burger2 {
+    border-top: 5px solid $col-b;
+  }
+  .burger3 {
+    border-top: 5px solid $col-a;
   }
   .tab-container {
     position: absolute;
@@ -77,10 +94,24 @@ header {
     background-color: $background;
     button {
       border: none;
+      border-radius: 0%;
+      border-bottom: 4px solid;
+      // border-bottom: 4px solid $col-a;
+      width: 50%;
       font-size: 35px;
       height: 100px;
     }
+    .col-a {
+      border-color: $col-a;
+    }
+    .col-b {
+      border-color: $col-b;
+    }
+    .col-c {
+      border-color: $col-c;
+    }
   }
+
   .open {
     height: 900px;
   }
