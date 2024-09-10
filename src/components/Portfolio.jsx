@@ -10,6 +10,7 @@ const Portfolio = () => {
       description: "Of course this website had to be included!",
       github: "git link",
       live: "live link",
+      style: "item-container item-a",
     },
     {
       title: "Hyundai Homage",
@@ -18,6 +19,7 @@ const Portfolio = () => {
         "A homage to the Hyundai website using only vanilla CSS and HTML.",
       github: "https://github.com/Jack-Berry/JB-Homage",
       live: "https://main--hyundai-homage.netlify.app/",
+      style: "item-container item-b",
     },
     {
       title: "Holidough",
@@ -26,6 +28,7 @@ const Portfolio = () => {
         "Complete holiday budgeting app with an intuitive UI. This is a full-stack React app using lots of cool things I'll list later",
       github: "git link",
       live: "live link",
+      style: "item-container item-c",
     },
     {
       title: "Weather App",
@@ -34,6 +37,7 @@ const Portfolio = () => {
         "A simple weather app using the Open Weather API and vanilla Javascript and CSS. I have included some responsive styling depending on the weather and a simple programatic animation based on the chance of rain.",
       github: "https://github.com/Jack-Berry/Weather",
       live: "https://jbweather-app.netlify.app/",
+      style: "item-container item-d",
     },
     {
       title: "The Simpsons Quotes",
@@ -41,6 +45,7 @@ const Portfolio = () => {
       description: "Simpsons quotes with filtering etc",
       github: "git link",
       live: "live link",
+      style: "item-container item-a",
     },
   ];
 
@@ -56,6 +61,7 @@ const Portfolio = () => {
               description={item.description}
               live={item.live}
               github={item.github}
+              style={item.style}
             />
           );
         })}

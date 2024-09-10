@@ -37,6 +37,7 @@ header {
   width: 100%;
   // margin-bottom: 150px;
   padding: 15px;
+  z-index: 3;
 
   .logo-text-container {
     // margin-right: auto;
@@ -123,7 +124,7 @@ header {
 
 footer {
   background-color: $background;
-  position: fixed;
+  position: static;
   left: 0;
   bottom: 0;
   right: 0;

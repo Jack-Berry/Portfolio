@@ -61,8 +61,11 @@ const About = () => {
           </div>
         </div>
         <div className="about-body-container">
+          {/* <h2>About</h2> */}
+          <div className="about-img-container">
+            <img src="src/assets/Jack 300x300.png" alt="" />
+          </div>
           <div className="about-text-container">
-            <h2>About</h2>
             <p>
               My name is Jack Berry and I am a nerd, tech lover and software
               engineer. I enjoy solving complex problems, whether it's frontend
@@ -81,13 +84,6 @@ const About = () => {
               so I can continue working on the project with a reasonable idea of
               what it'll look like.
             </p>
-          </div>
-          <div className="about-img-container">
-            <h2>PICTURE OF ME</h2>
-            <img
-              src="src/assets/5bbc4580e3c14-c76c281102e784bab037b80077f849aa.png"
-              alt=""
-            />
           </div>
         </div>
       </div>

@@ -22,8 +22,6 @@
 
 .item-container {
   width: 320px;
-  border: 2px $border solid;
-  border-radius: 5px;
   padding: 25px;
   margin: 25px;
   background-color: $background;
@@ -35,6 +33,31 @@
     width: 100%;
     border-radius: 5px;
   }
+}
+
+.item-a {
+  border-bottom: 3px $col-d solid;
+  border-top: 3px $col-b solid;
+  // border-right: 3px $col-a solid;
+  // border-left: 3px $col-c solid;
+}
+.item-b {
+  border-bottom: 3px $col-c solid;
+  border-top: 3px $col-d solid;
+  // border-right: 3px $col-b solid;
+  // border-left: 3px $col-a solid;
+}
+.item-c {
+  border-bottom: 3px $col-a solid;
+  border-top: 3px $col-c solid;
+  // border-right: 3px $col-d solid;
+  // border-left: 3px $col-b solid;
+}
+.item-d {
+  border-bottom: 3px $col-b solid;
+  border-top: 3px $col-a solid;
+  // border-right: 3px $col-c solid;
+  // border-left: 3px $col-d solid;
 }
 
 .item-button-container {
