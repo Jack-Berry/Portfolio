@@ -33,19 +33,19 @@
   flex-direction: column;
   align-items: center;
   background-color: $background;
-  // background-image: url(src/assets/SimpleShiny.svg);
 }
 .spinner {
   position: absolute;
-  border-bottom: 3px $col-d solid;
-  border-top: 3px $col-b solid;
-  border-right: 3px $col-a solid;
-  border-left: 3px $col-c solid;
-  border-radius: 50%;
+  border-bottom: 7px $col-d solid;
+  border-top: 7px $col-b solid;
+  // border-right: 7px $col-a solid;
+  // border-left: 7px $col-c solid;
+  // border-radius: 50%;
   width: 500px;
   height: 500px;
   top: 200px;
-  animation: spinning 7s infinite linear;
+  // animation: spinning 20s infinite linear;
+  // transition: border-width 0.7s linear;
 }
 
 .anim-container {
@@ -118,26 +118,27 @@
     padding-bottom: 150px;
   }
   .spinner {
-    // position: absolute;
-    // border-bottom: 3px $col-d solid;
-    // border-top: 3px $col-b solid;
-    // border-right: 3px $col-a solid;
-    // border-left: 3px $col-c solid;
-    // border-radius: 50%;
+    border-bottom: 7px $col-d solid;
+    border-top: 7px $col-b solid;
+    border-right: 7px $col-a solid;
+    border-left: 7px $col-c solid;
+    border-radius: 50%;
     width: 600px;
     height: 600px;
     top: 190px;
-    // animation: spinning 7s infinite linear;
+    animation: spinning 20s infinite linear;
+    transition: border-width 0.7s linear;
+  }
+  .spinner:hover {
+    border-bottom: 3px $col-d solid;
+    border-top: 3px $col-b solid;
+    border-right: 3px $col-a solid;
+    border-left: 3px $col-c solid;
+    animation: spinning 1s infinite linear;
   }
 }
 
 @media (min-width: 680px) {
-  .intro-container {
-    // border-radius: 50%;
-    // padding-top: 150px;
-    // padding-bottom: 150px;
-  }
-
   .about-body-container {
     .about-text-container {
       width: 80%;
