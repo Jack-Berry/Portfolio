@@ -1,0 +1,66 @@
+/*
+**************************
+            SASS
+**************************
+*/
+@import "variables";
+/*
+************END***********
+*/
+
+.contact-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  margin-bottom: 100px;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 80%;
+  //   height: 600px;
+}
+.contact {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+  font-size: 25px;
+  width: 100%;
+  padding: 10px;
+
+  input {
+    font-size: 18px;
+    font-weight: 500;
+  }
+}
+
+.name {
+  border: 3px $col-a solid;
+  height: 30px;
+  width: 50%;
+}
+.email {
+  border: 3px $col-b solid;
+  height: 30px;
+  width: 50%;
+}
+
+.message {
+  border: 3px $col-c solid;
+  width: 75%;
+  height: 200px;
+}
+
+.submit-button {
+  margin-top: 15px;
+  border: 1px solid $col-d;
+  border-bottom: 4px solid $col-d;
+  width: 150px;
+  font-size: 25px;
+  height: 60px;
+}
