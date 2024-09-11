@@ -60,6 +60,7 @@ const About = () => {
             <h2 className="text-anim">{toolArr[arrCounter]}</h2>
           </div>
         </div>
+        <div className="spinner" />
         <div className="about-body-container">
           {/* <h2>About</h2> */}
           <div className="about-img-container">
