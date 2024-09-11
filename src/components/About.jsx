@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import "../css/about.scss";
+import "../css/About.scss";
 
 const About = () => {
   let [toolArr, setToolArr] = useState([
