@@ -118,16 +118,16 @@
     padding-bottom: 150px;
   }
   .spinner {
-    border-bottom: 7px $col-d solid;
-    border-top: 7px $col-b solid;
-    border-right: 7px $col-a solid;
-    border-left: 7px $col-c solid;
+    border-bottom: 10px $col-d solid;
+    border-top: 10px $col-b solid;
+    border-right: 10px $col-a solid;
+    border-left: 10px $col-c solid;
     border-radius: 50%;
     width: 600px;
     height: 600px;
     top: 190px;
     animation: spinning 20s infinite linear;
-    transition: border-width 0.7s linear;
+    transition: border-width 1s linear;
   }
   .spinner:hover {
     border-bottom: 3px $col-d solid;
