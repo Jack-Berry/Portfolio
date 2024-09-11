@@ -43,17 +43,20 @@
   border: 3px $col-a solid;
   height: 30px;
   width: 50%;
+  max-width: 400px;
 }
 .email {
   border: 3px $col-b solid;
   height: 30px;
   width: 50%;
+  max-width: 400px;
 }
 
 .message {
   border: 3px $col-c solid;
   width: 75%;
   height: 200px;
+  max-width: 600px;
 }
 
 .submit-button {
