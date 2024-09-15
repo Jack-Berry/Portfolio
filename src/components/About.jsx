@@ -3,21 +3,21 @@ import "../css/About.scss";
 
 const About = () => {
   let [toolArr, setToolArr] = useState([
-    { name: "Express", img: "assets/express.svg" },
-    { name: "Javascript", img: "assets/javascript.svg" },
-    { name: "HTML5", img: "assets/html5.svg" },
-    { name: "NPM", img: "assets/npm.svg" },
-    { name: "React", img: "assets/react.svg" },
-    { name: "Bootstrap", img: "assets/bootstrap.svg" },
-    { name: "Redux", img: "assets/redux.svg" },
-    { name: "Vite", img: "assets/vite.svg" },
-    { name: "Sass", img: "assets/sass.svg" },
-    { name: "mySQL", img: "assets/mysql.svg" },
-    { name: "Git", img: "assets/git.svg" },
-    { name: "CSS3", img: "assets/css3.svg" },
-    { name: "Node.Js", img: "assets/nodedotjs.svg" },
-    { name: "Next.js", img: "assets/nextdotjs.svg" },
-    { name: "Joi", img: "assets/black_shape.png" },
+    { name: "Express", img: "src/assets/express.svg" },
+    { name: "Javascript", img: "src/assets/javascript.svg" },
+    { name: "HTML5", img: "src/assets/html5.svg" },
+    { name: "NPM", img: "src/assets/npm.svg" },
+    { name: "React", img: "src/assets/react.svg" },
+    { name: "Bootstrap", img: "src/assets/bootstrap.svg" },
+    { name: "Redux", img: "src/assets/redux.svg" },
+    { name: "Vite", img: "src/assets/vite.svg" },
+    { name: "Sass", img: "src/assets/sass.svg" },
+    { name: "mySQL", img: "src/assets/mysql.svg" },
+    { name: "Git", img: "src/assets/git.svg" },
+    { name: "CSS3", img: "src/assets/css3.svg" },
+    { name: "Node.Js", img: "src/assets/nodedotjs.svg" },
+    { name: "Next.js", img: "src/assets/nextdotjs.svg" },
+    { name: "Joi", img: "src/assets/black_shape.png" },
   ]);
   let [arrCounter, setArrCounter] = useState(0);
   let [runCounter, setRunCounter] = useState(0);
@@ -70,7 +70,7 @@ const About = () => {
         <div className="about-body-container">
           <div className="about-img-container">
             <div className="img-border" />
-            <img src="assets/jack-400x400.jpg" alt="" />
+            <img src="jack-400x400.jpg" alt="" />
           </div>
           <div className="about-text-container">
             <p>
