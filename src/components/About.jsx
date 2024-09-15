@@ -17,7 +17,7 @@ const About = () => {
     { name: "CSS3", img: "src/assets/css3.svg" },
     { name: "Node.Js", img: "src/assets/nodedotjs.svg" },
     { name: "Next.js", img: "src/assets/nextdotjs.svg" },
-    // { name: "Joi", img: "src/assets/joi.png" },
+    { name: "Joi", img: "src/assets/black_shape.png" },
   ]);
   let [arrCounter, setArrCounter] = useState(0);
   let [runCounter, setRunCounter] = useState(0);
@@ -70,7 +70,7 @@ const About = () => {
         <div className="about-body-container">
           <div className="about-img-container">
             <div className="img-border" />
-            <img src="src/assets/jack-400x400.jpg" alt="" />
+            <img src="/src/assets/jack-400x400.jpg" alt="" />
           </div>
           <div className="about-text-container">
             <p>
