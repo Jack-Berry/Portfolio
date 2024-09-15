@@ -3,10 +3,10 @@ import "../css/About.scss";
 
 const About = () => {
   let [toolArr, setToolArr] = useState([
-    { name: "Express", img: "src/assets/express.svg" },
-    { name: "Javascript", img: "src/assets/javascript.svg" },
-    { name: "HTML5", img: "src/assets/html5.svg" },
-    { name: "NPM", img: "src/assets/npm.svg" },
+    { name: "Express", img: "/src/assets/express.svg" },
+    { name: "Javascript", img: "/src/assets/javascript.svg" },
+    { name: "HTML5", img: "/src/assets/html5.svg" },
+    { name: "NPM", img: "/src/assets/npm.svg" },
     { name: "React", img: "src/assets/react.svg" },
     { name: "Bootstrap", img: "src/assets/bootstrap.svg" },
     { name: "Redux", img: "src/assets/redux.svg" },
@@ -70,7 +70,7 @@ const About = () => {
         <div className="about-body-container">
           <div className="about-img-container">
             <div className="img-border" />
-            <img src="jack-400x400.jpg" alt="" />
+            <img src="/jack-400x400.jpg" alt="" />
           </div>
           <div className="about-text-container">
             <p>
