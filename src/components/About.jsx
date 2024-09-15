@@ -1,26 +1,39 @@
 import React, { useEffect, useState } from "react";
 import "../css/About.scss";
 import jack from "../assets/jack-400x400.jpg";
-import Express from "../assets/express.svg";
-import Javascript from "../assets/javascript.svg";
+import Expressicon from "../assets/express.svg";
+import Javascripticon from "../assets/javascript.svg";
+import HTMLicon from "../assets/html5.svg";
+import NPMicon from "../assets/npm.svg";
+import Reacticon from "../assets/react.svg";
+import Bootstrap from "../assets/bootstrap.svg";
+import Reduxicon from "../assets/redux.svg";
+import Viteicon from "../assets/vite.svg";
+import Sassicon from "../assets/sass.svg";
+import MYSQLicon from "../assets/mysql.svg";
+import Giticon from "../assets/git.svg";
+import CSSicon from "../assets/css3.svg";
+import Nodeicon from "../assets/nodedotjs.svg";
+import Nexticon from "../assets/nextdotjs.svg";
+import Joiicon from "../assets/black_shape.png";
 
 const About = () => {
   let [toolArr, setToolArr] = useState([
-    { name: "Express", img: Express },
-    { name: "Javascript", img: Javascript },
-    { name: "HTML5", img: "/src/assets/html5.svg" },
-    { name: "NPM", img: "/src/assets/npm.svg" },
-    { name: "React", img: "src/assets/react.svg" },
-    { name: "Bootstrap", img: "src/assets/bootstrap.svg" },
-    { name: "Redux", img: "src/assets/redux.svg" },
-    { name: "Vite", img: "src/assets/vite.svg" },
-    { name: "Sass", img: "src/assets/sass.svg" },
-    { name: "mySQL", img: "src/assets/mysql.svg" },
-    { name: "Git", img: "src/assets/git.svg" },
-    { name: "CSS3", img: "src/assets/css3.svg" },
-    { name: "Node.Js", img: "src/assets/nodedotjs.svg" },
-    { name: "Next.js", img: "src/assets/nextdotjs.svg" },
-    { name: "Joi", img: "src/assets/black_shape.png" },
+    { name: "Express", img: Expressicon },
+    { name: "Javascript", img: Javascripticon },
+    { name: "HTML5", img: HTMLicon },
+    { name: "NPM", img: NPMicon },
+    { name: "React", img: Reacticon },
+    { name: "Bootstrap", img: Bootstrap },
+    { name: "Redux", img: Reduxicon },
+    { name: "Vite", img: Viteicon },
+    { name: "Sass", img: Sassicon },
+    { name: "mySQL", img: MYSQLicon },
+    { name: "Git", img: Giticon },
+    { name: "CSS3", img: CSSicon },
+    { name: "Node.Js", img: Nodeicon },
+    { name: "Next.js", img: Nexticon },
+    { name: "Joi", img: Joiicon },
   ]);
   let [arrCounter, setArrCounter] = useState(0);
   let [runCounter, setRunCounter] = useState(0);
