@@ -13,7 +13,6 @@ const Item = ({ title, img, description, github, live, style }) => {
     <div className={style}>
       <h2>{title}</h2>
       <img src={img} alt={title}></img>
-      <p>{description}</p>
       <div className="item-button-container">
         <button className="view" onClick={handleLive}>
           View
@@ -22,6 +21,7 @@ const Item = ({ title, img, description, github, live, style }) => {
           Repo
         </button>
       </div>
+      <p>{description}</p>
     </div>
   );
 };
