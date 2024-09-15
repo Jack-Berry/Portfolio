@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import "../css/About.scss";
+import jack from "../assets/jack-400x400.jpg";
 
 const About = () => {
   let [toolArr, setToolArr] = useState([
@@ -70,7 +71,7 @@ const About = () => {
         <div className="about-body-container">
           <div className="about-img-container">
             <div className="img-border" />
-            <img src="/jack-400x400.jpg" alt="" />
+            <img src={jack} alt="" />
           </div>
           <div className="about-text-container">
             <p>
