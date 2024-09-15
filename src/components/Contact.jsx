@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "../css/contact.scss";
+import emailjs from "emailjs-com";
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -7,6 +8,8 @@ const Contact = () => {
     email: "",
     message: "",
   });
+
+  const submitButton = document.getElementById("submit-button");
 
   const handleChange = (e) => {
     setFormData({
@@ -16,15 +19,34 @@ const Contact = () => {
   };
 
   const handleSubmit = (e) => {
+    const serviceId = "berrydev";
+    const templateId = "template_3l86scc";
+    const publicKey = "A4iqc4pmThIvJm5DZ";
+
+    const templateParams = {
+      from_name: formData.name,
+      reply_to: formData.email,
+      to_name: "Jack",
+      message: formData.message,
+    };
+
     e.preventDefault();
-    // Handle form submission (e.g., send data to an API or email service)
-    console.log("Form submitted:", formData);
-    // Optionally, reset form
-    setFormData({
-      name: "",
-      email: "",
-      message: "",
-    });
+    submitButton.textContent = "Sending...";
+
+    emailjs
+      .send(serviceId, templateId, templateParams, publicKey)
+      .then((response) => {
+        console.log("Email sent!", response);
+        setFormData({
+          name: "",
+          email: "",
+          message: "",
+        });
+        submitButton.textContent = "Send";
+      })
+      .catch((error) => {
+        console.error("error sending email", error);
+      });
   };
   return (
     <div className="contact-container">
@@ -66,7 +88,7 @@ const Contact = () => {
             rows="5"
           ></textarea>
         </div>
-        <button type="submit" className="submit-button">
+        <button id="submit-button" type="submit" className="submit-button">
           Send
         </button>
       </form>

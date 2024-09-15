@@ -36,6 +36,7 @@
   input {
     font-size: 18px;
     font-weight: 500;
+    border-radius: 5px;
   }
 }
 
@@ -57,13 +58,16 @@
   width: 75%;
   height: 200px;
   max-width: 600px;
+  font-size: 18px;
+  font-weight: 500;
+  border-radius: 5px;
 }
 
 .submit-button {
   margin-top: 15px;
   border: 1px solid $col-d;
   border-bottom: 4px solid $col-d;
-  width: 150px;
+  width: 180px;
   font-size: 25px;
   height: 60px;
 }

@@ -3,22 +3,25 @@ import "../css/About.scss";
 
 const About = () => {
   let [toolArr, setToolArr] = useState([
-    "Express",
-    "Javascript",
-    "HTML5",
-    "NPM",
-    "React",
-    "Bootstrap",
-    "Redux",
-    "Vite",
-    "Sass",
-    "mySQL",
-    "Git",
-    "CSS3",
-    "Node.Js",
+    { name: "Express", img: "src/assets/express.svg" },
+    { name: "Javascript", img: "src/assets/javascript.svg" },
+    { name: "HTML5", img: "src/assets/html5.svg" },
+    { name: "NPM", img: "src/assets/npm.svg" },
+    { name: "React", img: "src/assets/react.svg" },
+    { name: "Bootstrap", img: "src/assets/bootstrap.svg" },
+    { name: "Redux", img: "src/assets/redux.svg" },
+    { name: "Vite", img: "src/assets/vite.svg" },
+    { name: "Sass", img: "src/assets/sass.svg" },
+    { name: "mySQL", img: "src/assets/mysql.svg" },
+    { name: "Git", img: "src/assets/git.svg" },
+    { name: "CSS3", img: "src/assets/css3.svg" },
+    { name: "Node.Js", img: "src/assets/nodedotjs.svg" },
+    { name: "Next.js", img: "src/assets/nextdotjs.svg" },
+    // { name: "Joi", img: "src/assets/joi.png" },
   ]);
   let [arrCounter, setArrCounter] = useState(0);
   let [runCounter, setRunCounter] = useState(0);
+  let message = toolArr[arrCounter].name;
 
   const startCounter = () => {
     let counter = arrCounter;
@@ -30,12 +33,10 @@ const About = () => {
         counter = 0;
         run++;
       }
-      // setRunCounter(run);
       setArrCounter(counter);
-      console.log("ran", run, runCounter);
       if (run === 2) {
         stop();
-        setToolArr(["Tech"]);
+        setRunCounter(2);
       }
     }, 150);
 
@@ -48,7 +49,10 @@ const About = () => {
     startCounter();
   }, []);
 
-  console.log(arrCounter, toolArr.length);
+  if (runCounter === 2) {
+    message = "Tech";
+  }
+
   return (
     <>
       <div className="main about-container">
@@ -57,13 +61,15 @@ const About = () => {
           <h2>I am a JavaScript Full-Stack Developer</h2>
           <div className="anim-container">
             <h2 className="i-like">I like using </h2>
-            <h2 className="text-anim">{toolArr[arrCounter]}</h2>
+            <h2 id="text-anim" className="text-anim">
+              {message}
+            </h2>
           </div>
         </div>
         <div className="spinner" />
         <div className="about-body-container">
-          {/* <h2>About</h2> */}
           <div className="about-img-container">
+            <div className="img-border" />
             <img src="src/assets/jack-400x400.jpg" alt="" />
           </div>
           <div className="about-text-container">
@@ -86,6 +92,16 @@ const About = () => {
               what it'll look like.
             </p>
           </div>
+        </div>
+        <div className="icons">
+          {toolArr.map(function (tool, index) {
+            return (
+              <div className="icon" key={index}>
+                <img src={tool.img} className="icon-img" />
+                <h3>{tool.name}</h3>
+              </div>
+            );
+          })}
         </div>
       </div>
     </>

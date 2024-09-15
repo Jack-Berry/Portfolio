@@ -8,8 +8,8 @@ const Portfolio = () => {
       title: "This website",
       img: "https://kgarayev.com/savemymarriage.jpg",
       description: "Of course this website had to be included!",
-      github: "git link",
-      live: "live link",
+      github: "https://github.com/Jack-Berry/Portfolio",
+      live: "https://www.berrydev.co.uk/",
       style: "item-container item-a",
     },
     {
@@ -34,7 +34,7 @@ const Portfolio = () => {
       title: "Weather App",
       img: "https://kgarayev.com/theceng.jpg",
       description:
-        "A simple weather app using the Open Weather API and vanilla Javascript and CSS. I have included some dynamic styling depending on the weather and a simple programatic animation based on the chance of rain.",
+        "A simple weather app using the Open Weather API and vanilla Javascript and CSS.",
       github: "https://github.com/Jack-Berry/Weather",
       live: "https://jbweather-app.netlify.app/",
       style: "item-container item-d",

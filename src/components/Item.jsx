@@ -15,8 +15,12 @@ const Item = ({ title, img, description, github, live, style }) => {
       <img src={img} alt={title}></img>
       <p>{description}</p>
       <div className="item-button-container">
-        <button onClick={handleLive}>View</button>
-        <button onClick={handleRepo}>Repo</button>
+        <button className="view" onClick={handleLive}>
+          View
+        </button>
+        <button className="repo" onClick={handleRepo}>
+          Repo
+        </button>
       </div>
     </div>
   );
