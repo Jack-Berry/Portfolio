@@ -1,11 +1,13 @@
 import React, { useEffect, useState } from "react";
 import "../css/About.scss";
 import jack from "../assets/jack-400x400.jpg";
+import Express from "../assets/express.svg";
+import Javascript from "../assets/javascript.svg";
 
 const About = () => {
   let [toolArr, setToolArr] = useState([
-    { name: "Express", img: "/src/assets/express.svg" },
-    { name: "Javascript", img: "/src/assets/javascript.svg" },
+    { name: "Express", img: Express },
+    { name: "Javascript", img: Javascript },
     { name: "HTML5", img: "/src/assets/html5.svg" },
     { name: "NPM", img: "/src/assets/npm.svg" },
     { name: "React", img: "src/assets/react.svg" },
