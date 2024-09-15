@@ -98,8 +98,10 @@
     // align-items: center;
 
     img {
+      width: 140%;
+      max-width: 450px;
       clip-path: circle(45% at 55% 50%);
-      transform: translateX(-80px);
+      transform: translateX(-65px);
     }
   }
 }
@@ -174,6 +176,7 @@
       // height: 100%;
       // text-align: center;
       img {
+        width: 120%;
         // width: 90%;
         transform: translateX(-50px);
       }
@@ -230,6 +233,7 @@
       img {
         transform: translateX(-10%);
         width: 100%;
+        max-width: 550px;
       }
     }
   }
