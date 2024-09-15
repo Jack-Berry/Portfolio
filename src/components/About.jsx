@@ -85,7 +85,6 @@ const About = () => {
         <div className="spinner" />
         <div className="about-body-container">
           <div className="about-img-container">
-            <div className="img-border" />
             <img src={jack} alt="" />
           </div>
           <div className="about-text-container">
