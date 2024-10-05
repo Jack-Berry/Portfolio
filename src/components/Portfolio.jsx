@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import Item from "./Item";
 import "../css/portfolio.scss";
 import Hyundai from "../assets/Hyundai-desktop.jpg";
+import Weather from "../assets/Weather-desktop.jpg";
 
 const Portfolio = () => {
   const portfolioItems = [
@@ -33,7 +34,7 @@ const Portfolio = () => {
     },
     {
       title: "Weather App",
-      img: "https://kgarayev.com/theceng.jpg",
+      img: Weather,
       description:
         "A simple weather app using the Open Weather API and vanilla Javascript and CSS.",
       github: "https://github.com/Jack-Berry/Weather",
