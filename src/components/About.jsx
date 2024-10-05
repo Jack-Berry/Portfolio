@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "../css/About.scss";
 import jack from "../assets/jack-400x400.jpg";
+import arrow from "../assets/down.svg";
 import Expressicon from "../assets/express.svg";
 import Javascripticon from "../assets/javascript.svg";
 import HTMLicon from "../assets/html5.svg";
@@ -38,6 +39,7 @@ const About = () => {
   let [arrCounter, setArrCounter] = useState(0);
   let [runCounter, setRunCounter] = useState(0);
   let message = toolArr[arrCounter].name;
+  const arrows = document.getElementById("down");
 
   const startCounter = () => {
     let counter = arrCounter;
@@ -67,11 +69,21 @@ const About = () => {
 
   if (runCounter === 2) {
     message = "Tech";
+    setTimeout(function () {
+      arrows.style.opacity = 0.4;
+    }, 6500);
+    setTimeout(function () {
+      arrows.style.opacity = 0;
+    }, 8000);
   }
 
   return (
     <>
       <div className="main about-container">
+        <div className="down" id="down">
+          <img src={arrow} className="arrow left" />
+          <img src={arrow} className="arrow right" />
+        </div>
         <div className="intro-container">
           <h1>Hi! I'm Jack</h1>
           <h2>I am a JavaScript Full-Stack Developer</h2>

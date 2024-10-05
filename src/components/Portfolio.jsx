@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import Item from "./Item";
 import "../css/portfolio.scss";
+import Hyundai from "../assets/Hyundai-desktop.jpg";
 
 const Portfolio = () => {
   const portfolioItems = [
@@ -14,7 +15,7 @@ const Portfolio = () => {
     },
     {
       title: "Hyundai Homage",
-      img: "https://kgarayev.com/investmentapp.jpg",
+      img: Hyundai,
       description:
         "A homage to the Hyundai website using only vanilla CSS and HTML.",
       github: "https://github.com/Jack-Berry/JB-Homage",

@@ -136,6 +136,10 @@
   border-radius: 5px;
 }
 
+.down {
+  display: none;
+}
+
 @keyframes spinning {
   from {
     transform: rotate(0deg);
@@ -204,6 +208,19 @@
         width: 90%;
         transform: translateX(-20px);
       }
+    }
+  }
+  .down {
+    top: 780px;
+    display: flex;
+    justify-content: space-between;
+    position: absolute;
+    width: 100%;
+    opacity: 0;
+    transition: opacity 0.8s linear;
+    .arrow {
+      width: 50px;
+      margin: 5%;
     }
   }
 }
