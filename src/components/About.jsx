@@ -71,10 +71,10 @@ const About = () => {
     message = "Tech";
     setTimeout(function () {
       arrows.style.opacity = 0.4;
-    }, 6500);
+    }, 2500);
     setTimeout(function () {
       arrows.style.opacity = 0;
-    }, 8000);
+    }, 4000);
   }
 
   return (
@@ -106,17 +106,16 @@ const About = () => {
               or backend, hardware or software.
             </p>
             <p>
-              I am a graduate of The Jump Digital School, completing their 3
-              month Full-Stack Software Engineer bootcamp. During this I
-              completed multiple projects, including a larger scale full-stack
-              project. I also have previous experience of programming in Swift.
+              I graduated from The Jump Digital School, where I completed an
+              intensive 3-month Full-Stack Software Engineering bootcamp.
+              Throughout this program, I successfully built multiple projects,
+              including a large-scale full-stack application. Additionally, I
+              also have experience programming in Swift.
             </p>
             <p>
-              At this point I know what I have written is shit, so I am just
-              going to treat this as a placeholder and come back to it when my
-              brain is braining. At least it is a similarly sized block of text,
-              so I can continue working on the project with a reasonable idea of
-              what it'll look like.
+              Outside of tech I enjoy walks with my 2 dachshunds, playing
+              football and performing as a singer in a band. I am also a
+              competent audio engineer and sound designer.
             </p>
           </div>
         </div>

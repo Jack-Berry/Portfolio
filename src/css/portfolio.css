@@ -1,0 +1,167 @@
+/*
+**************************
+            SASS
+**************************
+*/
+/*
+************END***********
+*/
+.portfolio-container {
+  padding-bottom: 200px;
+}
+
+.holidough-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-bottom: 3px white solid;
+  padding-bottom: 50px;
+  margin-bottom: 100px;
+}
+
+.holidough-carousel {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  height: 700px;
+}
+
+.holidough-item {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 80%;
+}
+.holidough-item img {
+  width: 80%;
+  height: 500px;
+  -o-object-fit: contain;
+     object-fit: contain;
+  margin-bottom: 20px;
+  transition: all 0.4s ease-in-out;
+}
+.holidough-item img:hover {
+  transform: scale(1.5);
+}
+
+.holidough-buttons {
+  width: 500px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.holidough-buttons button {
+  border-radius: 0px;
+  height: 50px;
+  width: 150px;
+  transition: all 0.2s linear;
+}
+.holidough-buttons button:hover {
+  border-width: 5px;
+  font-size: 18px;
+}
+.holidough-buttons .view {
+  border-bottom: 2px #81b29a solid;
+}
+.holidough-buttons .front {
+  border-bottom: 2px #15a3ef solid;
+}
+.holidough-buttons .backend {
+  border-bottom: 2px #f2cc8f solid;
+}
+
+.all-items-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.item-container {
+  width: 320px;
+  height: 450px;
+  padding: 25px;
+  margin: 25px;
+  background-color: black;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.item-container img {
+  width: 100%;
+  border-radius: 5px;
+  transition: all 0.4s ease-in-out;
+}
+.item-container img:hover {
+  transform: scale(2);
+}
+.item-container p {
+  height: 120px;
+}
+.item-container button {
+  border-radius: 0px;
+  height: 50px;
+  width: 120px;
+  transition: all 0.2s linear;
+}
+.item-container button:hover {
+  border-width: 5px;
+  font-size: 18px;
+}
+
+.item-a {
+  border-bottom: 3px #15a3ef solid;
+  border-top: 3px #f2cc8f solid;
+}
+.item-a .view {
+  border-bottom: 2px #e07a5f solid;
+}
+.item-a .repo {
+  border-bottom: 2px #81b29a solid;
+}
+
+.item-b {
+  border-bottom: 3px #81b29a solid;
+  border-top: 3px #15a3ef solid;
+}
+.item-b .view {
+  border-bottom: 2px #f2cc8f solid;
+}
+.item-b .repo {
+  border-bottom: 2px #e07a5f solid;
+}
+
+.item-c {
+  border-bottom: 3px #e07a5f solid;
+  border-top: 3px #81b29a solid;
+}
+.item-c .view {
+  border-bottom: 2px #15a3ef solid;
+}
+.item-c .repo {
+  border-bottom: 2px #f2cc8f solid;
+}
+
+.item-d {
+  border-bottom: 3px #f2cc8f solid;
+  border-top: 3px #e07a5f solid;
+}
+.item-d .view {
+  border-bottom: 2px #81b29a solid;
+}
+.item-d .repo {
+  border-bottom: 2px #15a3ef solid;
+}
+
+.item-button-container {
+  margin-top: 25px;
+  margin-bottom: 25px;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}/*# sourceMappingURL=portfolio.css.map */

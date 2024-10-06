@@ -1,0 +1,71 @@
+/*
+**************************
+            SASS
+**************************
+*/
+/*
+************END***********
+*/
+.contact-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  margin-bottom: 100px;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 80%;
+}
+
+.contact {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+  font-size: 25px;
+  width: 100%;
+  padding: 10px;
+}
+.contact input {
+  font-size: 18px;
+  font-weight: 500;
+  border-radius: 5px;
+}
+
+.name {
+  border: 3px #e07a5f solid;
+  height: 30px;
+  width: 50%;
+  max-width: 400px;
+}
+
+.email {
+  border: 3px #f2cc8f solid;
+  height: 30px;
+  width: 50%;
+  max-width: 400px;
+}
+
+.message {
+  border: 3px #81b29a solid;
+  width: 75%;
+  height: 200px;
+  max-width: 600px;
+  font-size: 18px;
+  font-weight: 500;
+  border-radius: 5px;
+}
+
+.submit-button {
+  margin-top: 15px;
+  border: 1px solid #15a3ef;
+  border-bottom: 4px solid #15a3ef;
+  width: 180px;
+  font-size: 25px;
+  height: 60px;
+}/*# sourceMappingURL=contact.css.map */

@@ -11,7 +11,69 @@
 .portfolio-container {
   padding-bottom: 200px;
 }
+.holidough-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-bottom: 3px white solid;
+  padding-bottom: 50px;
+  margin-bottom: 100px;
+}
+.holidough-carousel {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  height: 700px;
+}
+.holidough-item {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 80%;
 
+  img {
+    width: 80%;
+    height: 500px;
+    object-fit: contain;
+    margin-bottom: 20px;
+    transition: all 0.4s ease-in-out;
+  }
+  img:hover {
+    transform: scale(1.5);
+  }
+}
+.holidough-buttons {
+  width: 500px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+
+  button {
+    border-radius: 0px;
+    height: 50px;
+    width: 150px;
+    transition: all 0.2s linear;
+  }
+
+  button:hover {
+    border-width: 5px;
+    // outline: 1px white solid;
+    font-size: 18px;
+  }
+  .view {
+    border-bottom: 2px $col-c solid;
+  }
+  .front {
+    border-bottom: 2px $col-d solid;
+  }
+  .backend {
+    border-bottom: 2px $col-b solid;
+  }
+}
 .all-items-container {
   display: flex;
   flex-direction: row;
@@ -22,7 +84,7 @@
 
 .item-container {
   width: 320px;
-  height: 600px;
+  height: 450px;
   padding: 25px;
   margin: 25px;
   background-color: $background;
@@ -35,6 +97,10 @@
   img {
     width: 100%;
     border-radius: 5px;
+    transition: all 0.4s ease-in-out;
+  }
+  img:hover {
+    transform: scale(2);
   }
 
   p {
