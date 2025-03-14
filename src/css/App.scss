@@ -45,6 +45,14 @@ header {
       border: 4px $border solid;
       border-radius: 5px;
       padding: 5px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease,
+        background-color 0.3s ease;
+
+      &:hover {
+        transform: scale(1.2);
+        box-shadow: 0px 0px 15px #e4d7c3;
+        background-color: lighten($background, 10%);
+      }
     }
   }
   .burger-container {
@@ -107,16 +115,6 @@ header {
       border-color: $col-c;
     }
   }
-
-  .open {
-    // height: 900px;
-    // transition: height 5s linear;
-  }
-  .closed {
-    // height: 0;
-    // display: none;
-    // transition: height 5s linear;
-  }
 }
 
 footer {
@@ -126,6 +124,7 @@ footer {
   bottom: 0;
   right: 0;
   width: 100%;
+  padding-top: 100px;
 }
 
 @media (min-width: 860px) {

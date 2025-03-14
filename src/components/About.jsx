@@ -101,21 +101,28 @@ const About = () => {
           </div>
           <div className="about-text-container">
             <p>
-              My name is Jack Berry and I am a nerd, tech lover and software
-              engineer. I enjoy solving complex problems, whether it's frontend
-              or backend, hardware or software.
+              I’m a Software Engineer, nerd, and tech lover who loves learning
+              about new techniques and tools to solve complex problems across
+              the full tech-stack.
             </p>
             <p>
-              I graduated from The Jump Digital School, where I completed an
-              intensive 3-month Full-Stack Software Engineering bootcamp.
-              Throughout this program, I successfully built multiple projects,
-              including a large-scale full-stack application. Additionally, I
-              also have experience programming in Swift.
+              Expanding on my experience as a Swift developer, I completed a
+              3-month immersive full-stack software engineering bootcamp with{" "}
+              <a
+                href="https://www.thejump.tech/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                The Jump
+              </a>{" "}
+              learning JavaScript, React, Node, MongoDB, GSAP, Testing, CSS, and
+              more to a professional standard, and built multiple projects,
+              including a large-scale full-stack application.
             </p>
+
             <p>
-              Outside of tech I enjoy walks with my 2 dachshunds, playing
-              football and performing as a singer in a band. I am also a
-              competent audio engineer and sound designer.
+              I’m also experienced in using and augmenting audio as a sound
+              engineer.
             </p>
           </div>
         </div>

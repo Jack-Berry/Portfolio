@@ -9,7 +9,7 @@
 */
 
 .portfolio-container {
-  padding-bottom: 200px;
+  // padding-bottom: 200px;
 }
 .holidough-container {
   display: flex;
@@ -75,11 +75,25 @@
   }
 }
 .all-items-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 50px;
+  //   background-image: url(src/assets/SimpleShiny.svg);
+}
+.portfolio-items {
+  width: 90%;
   display: flex;
   flex-direction: row;
-  justify-content: center;
+  justify-content: space-between;
+  align-items: center;
   flex-wrap: wrap;
-  //   background-image: url(src/assets/SimpleShiny.svg);
+  border-bottom: 2px solid white;
+  padding-bottom: 50px;
+  h1 {
+    font-size: 40px;
+  }
 }
 
 .item-container {

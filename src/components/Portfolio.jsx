@@ -7,6 +7,7 @@ import PortfolioImg from "../assets/Portfolio-desktop.jpg";
 import HolidoughUI from "../assets/Holidough-desktop.jpg";
 import HolidoughExpense from "../assets/Holidough-AddExpense.jpg";
 import HolidoughBillSplits from "../assets/Holidough-BillSplits.jpg";
+import Cottage from "../assets/Bwythn.jpg";
 
 const Portfolio = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -28,7 +29,7 @@ const Portfolio = () => {
         "I also wrote the optional bill splitting feature. This operated similarly to creating an expense, but can be added, removed or edited independently of the expense. These can easily be split evenly wby pressing the button or the amount can be inputted manually.",
     },
   ];
-  const portfolioItems = [
+  const comissionItems = [
     {
       title: "This website",
       img: PortfolioImg,
@@ -37,6 +38,17 @@ const Portfolio = () => {
       live: "https://www.berrydev.co.uk/",
       style: "item-container item-a",
     },
+    {
+      title: "Bwthyn Preswylfa",
+      img: Cottage,
+      description:
+        "This was a comission for a holiday home website. I had to create clever workaround for several problems to help the client to avoid subscriptions and other charges.",
+      github: "https://github.com/Jack-Berry/Parker-website",
+      live: "https://holidayhomesandlets.co.uk/",
+      style: "item-container item-b",
+    },
+  ];
+  const portfolioItems = [
     {
       title: "Hyundai Homage",
       img: Hyundai,
@@ -55,14 +67,6 @@ const Portfolio = () => {
       live: "https://jbweather-app.netlify.app/",
       style: "item-container item-c",
     },
-    // {
-    //   title: "The Simpsons Quotes",
-    //   img: "https://kgarayev.com/claimsmanagement2.jpg",
-    //   description: "Simpsons quotes with filtering etc",
-    //   github: "git link",
-    //   live: "live link",
-    //   style: "item-container item-d",
-    // },
   ];
 
   const nextSlide = () => {
@@ -118,18 +122,36 @@ const Portfolio = () => {
         </div>
       </div>
       <div className="all-items-container">
-        {portfolioItems.map(function (item) {
-          return (
-            <Item
-              title={item.title}
-              img={item.img}
-              description={item.description}
-              live={item.live}
-              github={item.github}
-              style={item.style}
-            />
-          );
-        })}
+        <div className="portfolio-items">
+          <h1>Live Websites</h1>
+          {comissionItems.map(function (item) {
+            return (
+              <Item
+                title={item.title}
+                img={item.img}
+                description={item.description}
+                live={item.live}
+                github={item.github}
+                style={item.style}
+              />
+            );
+          })}
+        </div>
+        <div className="portfolio-items">
+          <h1>Project Work</h1>
+          {portfolioItems.map(function (item) {
+            return (
+              <Item
+                title={item.title}
+                img={item.img}
+                description={item.description}
+                live={item.live}
+                github={item.github}
+                style={item.style}
+              />
+            );
+          })}
+        </div>
       </div>
     </div>
   );

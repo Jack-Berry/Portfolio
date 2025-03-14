@@ -39,7 +39,9 @@ const Header = () => {
   return (
     <header>
       <div className="logo-text-container">
-        <h1>JB</h1>
+        <h1 onClick={handleAbout} style={{ cursor: "pointer" }}>
+          JB
+        </h1>
       </div>
       <div className="burger-container" tabIndex="0" onClick={toggleBurger}>
         <div className="hamburger burger1" />
