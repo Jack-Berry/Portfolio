@@ -150,6 +150,17 @@ footer {
   padding-top: 100px;
 }
 
+@media (max-width: 859px) {
+  header {
+    .theme-btn-header {
+      display: none;
+    }
+    .burger-container {
+      right: 20px;
+    }
+  }
+}
+
 @media (min-width: 860px) {
   header {
     .burger-container {

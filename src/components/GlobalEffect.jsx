@@ -4,6 +4,7 @@ import RandomDotsCanvas from "./RandomDotsCanvas";
 import "../css/GlobalEffect.scss";
 
 const GlobalEffect = () => {
+  const [isMobile, setIsMobile] = useState(() => window.innerWidth < 860);
   const [enabled, setEnabled] = useState(false);
   const [hovering, setHovering] = useState(false);
   const [lockedActive, setLockedActive] = useState(false);
@@ -11,6 +12,14 @@ const GlobalEffect = () => {
   const [aboutVisible, setAboutVisible] = useState(false);
   const mousePosRef = useRef({ x: null, y: null });
   const location = useLocation();
+
+  useEffect(() => {
+    const mq = window.matchMedia("(max-width: 859px)");
+    setIsMobile(mq.matches);
+    const handler = (e) => setIsMobile(e.matches);
+    mq.addEventListener("change", handler);
+    return () => mq.removeEventListener("change", handler);
+  }, []);
 
   // Track whether the About section is in view. Switch happens when the bottom of
   // .about-container passes 30% up the viewport — feels responsive without being
@@ -38,6 +47,8 @@ const GlobalEffect = () => {
       document.body.classList.remove("ge-active");
     };
   }, [location.pathname]);
+
+  if (isMobile) return null;
 
   const active = enabled && (lockedActive || hovering);
 

@@ -51,7 +51,11 @@
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  min-height: 700px;
+  min-height: 300px;
+
+  @media (min-width: 620px) {
+    min-height: 700px;
+  }
 }
 
 .hero-slide {
@@ -63,10 +67,14 @@
 
   img {
     width: 80%;
-    height: 500px;
+    height: 200px;
     object-fit: contain;
     margin-bottom: 20px;
     transition: all 0.4s ease-in-out;
+
+    @media (min-width: 620px) {
+      height: 500px;
+    }
   }
 
   img:hover {
@@ -96,7 +104,8 @@
 }
 
 .hero-buttons {
-  width: 500px;
+  width: 100%;
+  max-width: 500px;
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
@@ -105,7 +114,11 @@
   button {
     border-radius: 0px;
     height: 50px;
-    width: 150px;
+    width: 100px;
+
+    @media (min-width: 620px) {
+      width: 150px;
+    }
     transition: all 0.2s linear;
   }
 

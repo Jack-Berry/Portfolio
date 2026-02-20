@@ -1,3 +1,7 @@
 # Local Netlify folder
 .netlify
 .vercel
+
+# Dependencies and build output
+node_modules/
+dist/
