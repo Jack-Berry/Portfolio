@@ -351,6 +351,22 @@
   }
 }
 
+@media (max-width: 619px) {
+  // Hide all canvas/ring background effects — touch devices have no hover
+  .intro-bg {
+    display: none;
+  }
+  // Centre the spinner lines horizontally and fit the intro text between them
+  .spinner {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  .intro-container {
+    padding-top: 50px;
+    padding-bottom: 50px;
+  }
+}
+
 @media (min-width: 620px) {
   .intro-container {
     border: none;

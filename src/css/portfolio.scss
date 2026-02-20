@@ -180,6 +180,20 @@
   align-items: center;
   width: 100%;
   gap: 20px;
+
+  @media (max-width: 859px) {
+    flex-wrap: wrap;
+
+    .card-carousel-container {
+      order: -1; // card appears above the nav buttons
+      width: 100%;
+      flex: none;
+    }
+
+    .carousel-nav {
+      flex: 1; // prev and next share the row below the card
+    }
+  }
 }
 
 .card-carousel-container {
