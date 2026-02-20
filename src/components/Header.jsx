@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import Button from "./Button";
 import { useNavigate } from "react-router-dom";
 
-const Header = () => {
+const Header = ({ theme, toggleTheme }) => {
   const navigate = useNavigate();
   const [burgerOpen, setBurgerOpen] = useState(false);
   const [style, setStyle] = useState("tab-container closed");
@@ -43,7 +43,14 @@ const Header = () => {
           JB
         </h1>
       </div>
-      <div className="burger-container" tabIndex="0" onClick={toggleBurger}>
+      <div
+        className="burger-container"
+        tabIndex="0"
+        role="button"
+        aria-label={burgerOpen ? "Close menu" : "Open menu"}
+        aria-expanded={burgerOpen}
+        onClick={toggleBurger}
+      >
         <div className="hamburger burger1" />
         <div className="hamburger burger2" />
         <div className="hamburger burger3" />
@@ -61,6 +68,13 @@ const Header = () => {
           className={"tab col-c"}
         />
       </div>
+      <button
+        className="theme-btn-header"
+        onClick={toggleTheme}
+        aria-label="Toggle theme"
+      >
+        {theme === "dark" ? "☀" : "◑"}
+      </button>
     </header>
   );
 };

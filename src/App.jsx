@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import "./css/App.scss";
 import Header from "./components/Header";
 import About from "./components/About";
@@ -8,19 +8,26 @@ import Portfolio from "./components/Portfolio";
 import Contact from "./components/Contact";
 import Home from "./components/Home";
 import ScrollToTop from "./components/ScrollToTop";
+import GlobalEffect from "./components/GlobalEffect";
+import { useTheme } from "./hooks/useTheme";
 
 export default function App() {
+  const [theme, toggleTheme] = useTheme();
+
   return (
     <>
       <ScrollToTop />
-      <Header />
-      <Routes>
-        <Route path="About" element={<About />} />
-        <Route path="Contact" element={<Contact />} />
-        <Route path="Portfolio" element={<Portfolio />} />
-        <Route path="*" element={<Home />} />
-      </Routes>
-      <Footer />
+      <GlobalEffect />
+      <div style={{ position: "relative", zIndex: 2 }}>
+        <Header theme={theme} toggleTheme={toggleTheme} />
+        <Routes>
+          <Route path="About" element={<About />} />
+          <Route path="Contact" element={<Contact />} />
+          <Route path="Portfolio" element={<Portfolio />} />
+          <Route path="*" element={<Home />} />
+        </Routes>
+        <Footer theme={theme} toggleTheme={toggleTheme} />
+      </div>
     </>
   );
 }

@@ -1,9 +1,16 @@
 import React from "react";
 
-const Footer = () => {
+const Footer = ({ theme, toggleTheme }) => {
   return (
     <footer>
-      <p>Copyright © 2024 Jack Berry. All rights reserved.</p>
+      <button
+        className="theme-btn"
+        onClick={toggleTheme}
+        aria-label="Toggle theme"
+      >
+        {theme === "dark" ? "☀" : "◑"}
+      </button>
+      <p>Copyright © {new Date().getFullYear()} Jack Berry. All rights reserved.</p>
     </footer>
   );
 };

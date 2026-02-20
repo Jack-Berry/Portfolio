@@ -13,6 +13,62 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  position: relative; // contains .spinner and .intro-bg absolutely positioned children
+}
+
+.hover-hint {
+  position: fixed;
+  bottom: 68px;
+  right: 40px;
+  z-index: 9999;
+  color: $main-text;
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.4s ease;
+
+  &.hover-hint--visible {
+    opacity: 0.5;
+  }
+
+  body.ge-active & {
+    opacity: 0 !important;
+  }
+}
+
+.preview-switcher {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 9999;
+  display: flex;
+  gap: 8px;
+  transition: opacity 0.4s ease;
+
+  body.ge-active & {
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  .preview-btn {
+    background: var(--bg);
+    border: 2px solid $border;
+    color: $main-text;
+    padding: 6px 14px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: all 0.2s;
+
+    &.active {
+      background: $col-a;
+      border-color: $col-a;
+    }
+
+    &:hover:not(.active) {
+      border-color: $col-d;
+    }
+  }
 }
 
 .intro-container {
@@ -27,7 +83,125 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: $background;
+  position: relative;
+  z-index: 1; // above the bg layer
+}
+
+// ── Shared bg effect layer ───────────────────────────────────────────────────
+
+.intro-bg {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+}
+
+// ── A: Concentric counter-rotating rings ─────────────────────────────────────
+
+.intro-bg--a {
+  // Break out of the max-width container so rings fill the full viewport width.
+  // left: 50% + translateX(-50%) centres a 100vw element regardless of container width.
+  left: 50%;
+  right: auto;
+  transform: translateX(-50%);
+  width: 100vw;
+  overflow: hidden; // clips rings at viewport edges — prevents horizontal scroll
+
+  .ring {
+    position: absolute;
+    border-radius: 50%;
+    top: 350px; // vertically centred on the spinner (spinner top 50px + radius 300px)
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 550px; // starts at spinner size — hidden behind it
+    height: 550px;
+    transition:
+      width 2.5s ease-in-out,
+      height 0.8s ease-in-out;
+  }
+
+  // Rings always spin — sizes grow outward beyond the spinner on hover
+  .ring-1 {
+    border-top: 3px solid $col-b;
+    border-right: 3px solid $col-a;
+    border-bottom: 3px solid $col-d;
+    border-left: 3px solid $col-c;
+    animation: ring-cw 2s linear infinite;
+  }
+
+  .ring-2 {
+    border-top: 3px solid $col-a;
+    border-right: 3px solid $col-d;
+    border-bottom: 3px solid $col-c;
+    border-left: 3px solid $col-b;
+    animation: ring-ccw 3.5s linear infinite;
+  }
+
+  .ring-3 {
+    border-top: 3px solid $col-d;
+    border-right: 3px solid $col-c;
+    border-bottom: 3px solid $col-b;
+    border-left: 3px solid $col-a;
+    animation: ring-cw 5s linear infinite;
+  }
+
+  .ring-4 {
+    border-top: 3px solid $col-c;
+    border-right: 3px solid $col-b;
+    border-bottom: 3px solid $col-a;
+    border-left: 3px solid $col-d;
+    animation: ring-ccw 7s linear infinite;
+  }
+
+  .ring--active.ring-1 {
+    width: 800px;
+    height: 800px;
+  }
+
+  .ring--active.ring-2 {
+    width: 1050px;
+    height: 1050px;
+  }
+
+  .ring--active.ring-3 {
+    width: 1300px;
+    height: 1300px;
+  }
+
+  .ring--active.ring-4 {
+    width: 1550px;
+    height: 1550px;
+  }
+}
+
+@keyframes ring-cw {
+  from {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  to {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+
+@keyframes ring-ccw {
+  from {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  to {
+    transform: translate(-50%, -50%) rotate(-360deg);
+  }
+}
+
+// ── B: Tech rain (canvas fills the layer) ────────────────────────────────────
+
+.intro-bg--b {
+  overflow: hidden;
+}
+
+// ── C: Random moving dots (canvas fills the layer) ────────────────────────────
+
+.intro-bg--c {
+  overflow: hidden;
 }
 .spinner {
   position: absolute;
@@ -35,7 +209,8 @@
   border-top: 7px $col-b solid;
   width: 500px;
   height: 500px;
-  top: 200px;
+  top: 60px;
+  z-index: 0;
 }
 
 .anim-container {
@@ -43,10 +218,11 @@
   display: flex;
   flex-direction: row;
   justify-content: center;
+  transition: transform 0.3s ease;
 
   h2 {
-    margin-left: 10px;
-    width: 50%;
+    margin-left: 8px;
+    width: 48%;
   }
   .i-like {
     text-align: right;
@@ -54,7 +230,44 @@
   .text-anim {
     text-align: left;
     width: 40%;
+    transition: color 0.15s ease;
   }
+}
+
+.anim-container--active {
+  transform: translateX(-7px);
+}
+
+// Colour cycling classes — applied to the animated word while cycling
+.text-cycle-0 {
+  color: $col-a;
+}
+.text-cycle-1 {
+  color: $col-b;
+}
+.text-cycle-2 {
+  color: $col-c;
+}
+.text-cycle-3 {
+  color: $col-d;
+}
+
+// Pulse animation when cycling stops and lands on "Tech"
+@keyframes settle-grow {
+  0% {
+    transform: scale(1);
+  }
+  40% {
+    transform: scale(1.35);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.text-anim--settled {
+  transform-origin: left center;
+  animation: settle-grow 1.5s ease-out forwards;
 }
 
 .about-body-container {
@@ -73,6 +286,7 @@
     background-color: $background;
     border-bottom: 3px $col-c solid;
     border-top: 3px $col-a solid;
+    z-index: 2;
   }
 
   .about-img-container {
@@ -89,15 +303,17 @@
 
 .icons {
   margin-top: 50px;
-  margin-bottom: 150px;
+  padding-top: 50px;
   padding-bottom: 50px;
   width: 100%;
+  background-color: var(--bg-surface);
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
   align-items: center;
   flex-wrap: wrap;
-  border-bottom: 3px solid white;
+  border-bottom: 3px solid var(--border);
+  z-index: 2;
 
   .icon {
     display: flex;
@@ -113,7 +329,7 @@
   width: 50px;
   height: 50px;
   padding: 3px;
-  background-color: white;
+  background-color: var(--icon-bg);
   border-radius: 5px;
 }
 
@@ -142,13 +358,14 @@
     border-right: 10px $col-a solid;
     border-left: 10px $col-c solid;
     border-radius: 50%;
+    background-color: $background;
     width: 600px;
     height: 600px;
-    top: 190px;
+    top: 50px;
     animation: spinning 20s infinite linear;
     transition: border-width 1s linear;
   }
-  .spinner:hover {
+  .spinner.spinner--active {
     border-width: 3px;
     animation: spinning 1s infinite linear;
   }

@@ -1,0 +1,41 @@
+@import "variables";
+
+.ge-widget {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 9999;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.ge-square {
+  width: 90px;
+  height: 90px;
+  border: 1px solid var(--border-subtle);
+  background: transparent;
+  cursor: crosshair;
+}
+
+.ge-toggle {
+  background: var(--bg);
+  border: 2px solid $border;
+  color: $border;
+  width: 38px;
+  height: 38px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 16px;
+  border-radius: 4px;
+  padding: 0;
+  line-height: 1;
+
+  &.ge-toggle--active {
+    background: $col-a;
+    border-color: $col-a;
+  }
+}
