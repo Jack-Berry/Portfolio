@@ -14,7 +14,7 @@
   flex-direction: column;
   align-items: center;
   position: relative; // contains .spinner and .intro-bg absolutely positioned children
-  overflow-x: hidden;
+  overflow: visible; // rings are allowed to expand beyond this container freely
 }
 
 .hover-hint {
@@ -89,7 +89,7 @@
   flex-direction: column;
   align-items: center;
   position: relative;
-  z-index: 1; // above the bg layer
+  z-index: 5; // above the bg layer
 }
 
 // ── Shared bg effect layer ───────────────────────────────────────────────────
@@ -98,24 +98,26 @@
   position: absolute;
   inset: 0;
   pointer-events: none;
-  z-index: 0;
+  z-index: 4;
 }
 
 // ── A: Concentric counter-rotating rings ─────────────────────────────────────
 
 .intro-bg--a {
-  // Break out of the max-width container so rings fill the full viewport width.
-  // left: 50% + translateX(-50%) centres a 100vw element regardless of container width.
+  // Centred 100vw element so rings can expand past the container's max-width.
+  // overflow: visible lets rings grow without being clipped by this element.
+  // Horizontal scroll is prevented by overflow-x: hidden on the body instead.
   left: 50%;
   right: auto;
   transform: translateX(-50%);
   width: 100vw;
-  overflow: hidden; // clips rings at viewport edges — prevents horizontal scroll
+  overflow: visible;
+  z-index: 2; // below header (10), above nothing — rings are background decoration
 
   .ring {
     position: absolute;
     border-radius: 50%;
-    top: 350px; // vertically centred on the spinner (spinner top 50px + radius 300px)
+    top: 350px; // vertically centred on the spinner (spinner top 60px + radius 300px ≈ 360px)
     left: 50%;
     transform: translate(-50%, -50%);
     width: 550px; // starts at spinner size — hidden behind it
@@ -215,7 +217,7 @@
   width: min(500px, 90vw);
   height: min(500px, 90vw);
   top: 60px;
-  z-index: 0;
+  z-index: 4;
 }
 
 .anim-container {
@@ -241,6 +243,20 @@
 
 .anim-container--active {
   transform: translateX(-7px);
+}
+
+@media (max-width: 619px) {
+  .anim-container {
+    h2 {
+      width: auto;
+    }
+    .text-anim {
+      width: auto;
+    }
+  }
+  .anim-container--active {
+    transform: none;
+  }
 }
 
 // Colour cycling classes — applied to the animated word while cycling
@@ -277,6 +293,8 @@
 
 .about-body-container {
   width: 80%;
+  position: relative;
+  z-index: 3; // above fixed rings (z-index: 2)
   padding-top: 250px;
   padding-bottom: 100px;
   text-align: left;
@@ -307,11 +325,12 @@
 }
 
 .icons {
+  position: relative;
+  z-index: 3; // above fixed rings
   margin-top: 50px;
   padding-top: 50px;
   padding-bottom: 50px;
   width: 100%;
-  background-color: var(--bg-surface);
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
@@ -364,6 +383,11 @@
   .intro-container {
     padding-top: 50px;
     padding-bottom: 50px;
+  }
+  .about-body-container {
+    padding-top: 60px;
+    padding-bottom: 60px;
+    gap: 50px;
   }
 }
 

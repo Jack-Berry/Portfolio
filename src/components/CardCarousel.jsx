@@ -1,7 +1,25 @@
 import React, { useState, useRef, useLayoutEffect } from "react";
 import Item from "./Item";
 
-const COLOUR_VARIANTS = ["item-a", "item-b", "item-c", "item-d"];
+const COLOUR_VARIANTS = ["item-a", "item-b", "item-c", "item-d", "item-e"];
+
+// Greedy circular colour assignment: guarantees no two items within distance 2
+// (i.e. visible in the same 3-card frame) share a colour.
+const buildColourMap = (count, variants) => {
+  const colours = [];
+  for (let i = 0; i < count; i++) {
+    const forbidden = new Set();
+    if (i >= 1) forbidden.add(colours[i - 1]); // distance-1 backward
+    if (i >= 2) forbidden.add(colours[i - 2]); // distance-2 backward
+    if (i === count - 2) forbidden.add(colours[0]); // circular distance-2 (window [n-2,n-1,0])
+    if (i === count - 1) {
+      forbidden.add(colours[0]); // circular distance-1 (wrap)
+      if (count > 2) forbidden.add(colours[1]); // circular distance-2 (window [n-1,0,1])
+    }
+    colours.push(variants.find((v) => !forbidden.has(v)) ?? variants[i % variants.length]);
+  }
+  return colours;
+};
 
 const CardCarousel = ({ items, title }) => {
   const containerRef = useRef(null);
@@ -26,7 +44,8 @@ const CardCarousel = ({ items, title }) => {
   useLayoutEffect(() => {
     const measure = () => {
       if (containerRef.current) {
-        setCardWidth(containerRef.current.offsetWidth / visibleCount);
+        const peek = window.innerWidth >= 860 ? 160 : 80;
+        setCardWidth((containerRef.current.offsetWidth - peek) / visibleCount);
       }
     };
     measure();
@@ -38,6 +57,8 @@ const CardCarousel = ({ items, title }) => {
   }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
   if (!items || items.length === 0) return null;
+
+  const colourMap = buildColourMap(items.length, COLOUR_VARIANTS);
 
   // Layout: [last N real items as clones] [all real items] [first N real items as clones]
   // This gives us one "page" of runway in each direction before needing to snap.
@@ -110,8 +131,7 @@ const CardCarousel = ({ items, title }) => {
                 const realIndex =
                   ((i - clonesCount) % items.length + items.length) %
                   items.length;
-                const colour =
-                  COLOUR_VARIANTS[realIndex % COLOUR_VARIANTS.length];
+                const colour = colourMap[realIndex];
                 return (
                   <div
                     key={`${item.id}-${i}`}
@@ -124,6 +144,7 @@ const CardCarousel = ({ items, title }) => {
                       description={item.description}
                       live={item.live}
                       github={item.github}
+                      features={item.features}
                       style={`item-container ${colour}`}
                     />
                   </div>

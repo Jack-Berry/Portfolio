@@ -67,13 +67,16 @@ const Header = ({ theme, toggleTheme }) => {
           text={"Contact"}
           className={"tab col-c"}
         />
+        <button className="theme-btn-mobile" onClick={toggleTheme} aria-label="Toggle theme">
+          {theme === "dark" ? "Light mode" : "Dark mode"}
+        </button>
       </div>
       <button
         className="theme-btn-header"
         onClick={toggleTheme}
         aria-label="Toggle theme"
       >
-        {theme === "dark" ? "☀" : "◑"}
+        {theme === "dark" ? "Light" : "Dark"}
       </button>
     </header>
   );

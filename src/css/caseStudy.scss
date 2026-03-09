@@ -1,0 +1,334 @@
+@import "variables";
+
+// ── Accent per colour variant ─────────────────────────────────────────────────
+.case-study--col-a {
+  --accent: #{$col-a};
+}
+.case-study--col-b {
+  --accent: #{$col-b};
+}
+.case-study--col-c {
+  --accent: #{$col-c};
+}
+.case-study--col-d {
+  --accent: #{$col-d};
+}
+
+// ── Outer shell ───────────────────────────────────────────────────────────────
+.case-study {
+  position: relative;
+  width: 100%;
+  padding: 60px 0 60px;
+  border-top: 1px solid var(--border-subtle);
+  text-align: left;
+
+  & + .case-study {
+    margin-top: 0;
+  }
+}
+
+// ── Decorative index number ───────────────────────────────────────────────────
+.case-study__index {
+  position: absolute;
+  top: 52px;
+  right: 0;
+  font-size: clamp(60px, 10vw, 120px);
+  font-weight: 900;
+  color: var(--accent);
+  opacity: 0.08;
+  line-height: 1;
+  pointer-events: none;
+  user-select: none;
+  letter-spacing: -0.03em;
+}
+
+// ── Header ────────────────────────────────────────────────────────────────────
+.case-study__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-bottom: 8px;
+}
+
+.case-study__title {
+  font-size: clamp(22px, 4vw, 36px);
+  margin: 0;
+  padding-left: 16px;
+  border-left: 4px solid var(--accent);
+  line-height: 1.2;
+}
+
+.case-study__tagline {
+  font-style: italic;
+  opacity: 0.6;
+  margin: 0 0 32px 20px;
+  font-size: 15px;
+  line-height: 1.6;
+  max-width: 820px;
+}
+
+// ── Buttons ───────────────────────────────────────────────────────────────────
+.case-study__buttons {
+  display: flex;
+  gap: 10px;
+  flex-shrink: 0;
+  flex-wrap: wrap;
+}
+
+.case-study__btn {
+  background: none;
+  border: none;
+  border-bottom: 3px solid var(--accent);
+  color: $main-text;
+  padding: 6px 16px;
+  cursor: pointer;
+  font-size: 14px;
+  text-decoration: none;
+  display: inline-block;
+  transition:
+    border-width 0.15s linear,
+    background-color 0.15s ease;
+
+  &:hover {
+    border-bottom-width: 5px;
+    background-color: var(--bg-hover);
+  }
+}
+
+// ── Body: image + content side by side ───────────────────────────────────────
+.case-study__body {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  margin-bottom: 40px;
+
+  @media (min-width: 860px) {
+    flex-direction: row;
+    gap: 48px;
+    align-items: flex-start;
+
+    &--reversed {
+      flex-direction: row-reverse;
+    }
+  }
+}
+
+// ── Image ─────────────────────────────────────────────────────────────────────
+.case-study__image {
+  width: 100%;
+
+  @media (min-width: 860px) {
+    flex: 0 0 54%;
+    max-width: 54%;
+  }
+
+  img {
+    width: 100%;
+    display: block;
+    border: 1px solid var(--border-subtle);
+    border-radius: 4px;
+  }
+}
+
+.case-study__img-placeholder {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  background-color: var(--accent);
+  opacity: 0.12;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--border-subtle);
+
+  span {
+    font-size: clamp(28px, 5vw, 56px);
+    font-weight: 900;
+    letter-spacing: 0.08em;
+    color: var(--accent);
+    opacity: 1; // relative to parent — actual opacity is accent at ~12% bg + full text
+    mix-blend-mode: normal;
+  }
+}
+
+// Fix: placeholder text needs to be visible against the faint background
+.case-study__img-placeholder {
+  background: none;
+  border: 2px dashed var(--accent);
+  opacity: 0.4;
+}
+
+// ── Content column ────────────────────────────────────────────────────────────
+.case-study__content {
+  flex: 1;
+  min-width: 0;
+}
+
+.case-study__description {
+  line-height: 1.75;
+  margin-bottom: 24px;
+  font-size: 15px;
+}
+
+.case-study__section-heading {
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  opacity: 0.5;
+  margin-bottom: 12px;
+  font-weight: 600;
+}
+
+// ── Features list ─────────────────────────────────────────────────────────────
+.case-study__features {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 20px;
+
+  li {
+    padding: 8px 0 8px 14px;
+    border-left: 2px solid var(--accent);
+    margin-bottom: 8px;
+    font-size: 14px;
+    line-height: 1.6;
+  }
+}
+
+// ── Highlights (collapsible) ──────────────────────────────────────────────────
+.case-study__highlights-section {
+  margin-top: 4px;
+}
+
+.case-study__toggle-btn {
+  background: none;
+  border: none;
+  border-bottom: 1px solid var(--accent);
+  color: var(--accent);
+  cursor: pointer;
+  padding: 3px 0;
+  font-size: 13px;
+  letter-spacing: 0.04em;
+  transition: opacity 0.15s ease;
+  border-radius: 0;
+
+  &:hover {
+    opacity: 0.7;
+  }
+}
+
+.case-study__highlights {
+  list-style: none;
+  padding: 0;
+  margin: 14px 0 0;
+
+  li {
+    padding: 12px 14px;
+    margin-bottom: 8px;
+    background: var(--bg-surface);
+    font-size: 13px;
+    line-height: 1.7;
+    border-left: 2px solid var(--border-subtle);
+  }
+}
+
+// ── Footer: stack + scale ─────────────────────────────────────────────────────
+.case-study__footer {
+  padding-top: 28px;
+  border-top: 1px solid var(--border-subtle);
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+
+  @media (min-width: 860px) {
+    flex-direction: row;
+    gap: 48px;
+    align-items: flex-start;
+  }
+}
+
+// ── Stack ─────────────────────────────────────────────────────────────────────
+.case-study__stack {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  flex: 1;
+}
+
+.case-study__stack-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px;
+}
+
+.case-study__stack-label {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  opacity: 0.45;
+  min-width: 72px;
+  flex-shrink: 0;
+}
+
+.case-study__badge-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+}
+
+.case-study__badge {
+  font-size: 11px;
+  padding: 2px 8px;
+  border: 1px solid var(--border-subtle);
+  border-radius: 2px;
+  white-space: nowrap;
+
+  &--more {
+    opacity: 0.5;
+    border-style: dashed;
+  }
+}
+
+// ── Scale ─────────────────────────────────────────────────────────────────────
+.case-study__scale {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.case-study__stats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.case-study__stat {
+  text-align: center;
+  min-width: 56px;
+
+  strong {
+    display: block;
+    font-size: 26px;
+    color: var(--accent);
+    line-height: 1.1;
+  }
+
+  span {
+    display: block;
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.07em;
+    opacity: 0.45;
+    margin-top: 3px;
+  }
+}
+
+.case-study__status {
+  font-size: 13px;
+  opacity: 0.55;
+  font-style: italic;
+  line-height: 1.5;
+  max-width: 380px;
+}
